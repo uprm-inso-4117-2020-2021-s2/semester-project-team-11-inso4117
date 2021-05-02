@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet" />
+        <link href="{% static './css/main.css' %}" rel="stylesheet" />
+        <title>Lawyer Registration</title>
+    </head>
+    <body>
+    <form action="registerLawyer" method="POST">
+
+        {% csrf_token %}
+
+        <div class="v120_36">
+            <div class="v120_39"></div>
+            <span class="v120_40">Registro como abogado</span>
+            <div class="v120_41"></div>
+            <div class="v120_42"></div>
+            <div class="v120_43"></div>
+            <a href="registerClient"><span class="v120_44">No, soy cliente</span></a><a href="registerLawyer"><span class="v120_45">Soy abogado</span></a><span class="v120_46">Como abogado veras todos tus clientes y su proceso!</span>
+            <div class="v120_50"></div>
+            <span class="v120_51">or</span><span class="v120_52" style="margin-left: 0px;">First name:</span><span class="v120_52" style="margin-left: 650px;">Username:</span><span class="v120_53" style="margin-left: 475px;">Last name:</span><span class="v120_54">Email:</span><span class="v120_55" style="">Password:</span>
+            <input type="text" name="first_name" class="v120_56" style="margin-left: 50px;">
+            <input type="text" name="user_name" class="v120_56" style="margin-left: 700px;">
+            <input type="email" name="email" class="v120_57" style="margin-left: 50px;">
+            <input type="password" name="password" class="v120_58" style="margin-left: 50px;">
+            <input type="text" name="RUA" class="v120_59" style="margin-left: 50px;">
+            <input type="text" name="last_name" class="v120_60" style="margin-left: 450px;">
+            <span class="v120_61">RUA:</span>
+        </div>
+        <input type="submit" value="Submit" style="margin-left: 1200px;margin-top: 0px;">
+
+    </form>
+    </body>
+    </html>
+
+{% endblock %}
