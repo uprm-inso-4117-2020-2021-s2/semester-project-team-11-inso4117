@@ -14,9 +14,17 @@
 </head>
 <body>
     <div class="v120_4"></div>
-    <span class="v120_7" style="margin-left: 500px;">Servicios</span><span class="v120_8" style="margin-left: 1250px;">Login</span>
+    <span class="v120_7" style="margin-left: 500px;">Servicios</span>
+    {% if user.is_authenticated %}
+    <a href=""><span class="v120_8" style="margin-left: 1250px;margin-top: -10px;">Hello, gamer</span></a>
     <div class="v120_9" style="margin-left: 1250px;"></div>
-    <a href="accounts/registerLawyer"><span class="v120_10" style="margin-left: 1250px;">Register</span></a>
+    <a href="{% url 'logout' %}"><span class="v120_10" style="margin-left: 1268px;">Logout</span></a>
+    <a href="/"><div class="v143_2"></div></a>
+    {% else %}
+    <a href="{% url 'login' %}"><span class="v120_8" style="margin-left: 1250px;">Login</span></a>
+    <div class="v120_9" style="margin-left: 1250px;"></div>
+    <a href="{% url 'registerLawyer' %}"><span class="v120_10" style="margin-left: 1268px;">Register</span></a>
+    {% endif %}
     <a href="/"><div class="v143_2"></div></a>
 {% block content %}
 
